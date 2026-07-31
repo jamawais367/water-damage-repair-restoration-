@@ -631,6 +631,37 @@ section.final-cta,
 .form-group textarea { min-height: 120px; resize: vertical; }
 .btn-secondary { background: var(--color-primary); color: #fff; }
 
+/* Section Phone CTA */
+.section-phone-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+.section-phone-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-urgent);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.375rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.section-phone-cta a:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  text-decoration: none;
+}
+.section-phone-cta svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
 @media (max-width: 900px) {
   .hero { min-height: calc(100svh - var(--site-top-height)); padding-bottom: 0.875rem; }
   .hero-grid, .about-grid, .footer-grid { grid-template-columns: 1fr; }
