@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initMobileNav();
   initSmoothScroll();
   initContactForm();
+  initExternalLinks();
 });
 
 /**
@@ -101,14 +102,23 @@ function initContactForm() {
   });
 }
 
+/**
+ * Force subpages and external links to open in a new tab
+ */
+function initExternalLinks() {
+  var links = document.querySelectorAll('a');
+  links.forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
 
+    // Skip smooth scroll/same-page links, phone links, and email links
+    if (href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('javascript:')) {
+      return;
+    }
 
-
-
-
-
-
-
-
-
+    // Set link target to open in a new tab
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+}
 
